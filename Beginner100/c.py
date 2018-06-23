@@ -13,7 +13,7 @@ for _ in range(n):
         else:
             break
     a0.append(i)
-# print(a0)
+print(sum(a0))
 
 i = 0
 amax = 1000000000
