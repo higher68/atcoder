@@ -22,3 +22,21 @@ s2 = [[False for j in range(w)] for i in range(h)]
 # すでに使ったマスを使える。なので、m+1の時塗れる。
 # #が2このときは自明なので、帰納法より、m個数の時、濡れる。
 # 以上から、1つも隣接していない黒マスがあるかどうかを調べれば良い。
+judge = True
+for i in range(1, h+1):
+    for j in range(1, w+1):
+        if s[i][j] == "#":
+            if [s[i+1][j], s[i-1][j], s[i][j-1], s[i][j+1]] \
+            == ['.', '.', '.', '.']:
+                judge = False
+
+        else:
+            continue
+        if not judge:
+            break
+    if not judge:
+        break
+if judge:
+    print('Yes')
+else:
+    print('No')
