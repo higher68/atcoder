@@ -13,7 +13,7 @@ for i in range(n):
 x = sorted(x, key=lambda y: y[0])
 # keyで指定すると、各行の2列目でsortしちゃう
 # for i in range(n):
-    # print(x[i])
+# print(x[i])
 # print(x)
 mid = n//2
 for i in range(n):
