@@ -19,7 +19,7 @@ def prime_num(max_input):
         else:
             m += 1
         if m > max_input:
-            return result
+            return result[:n]
 
 
 print(prime_num(11))
