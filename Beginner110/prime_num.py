@@ -1,6 +1,6 @@
 def prime_num(max_input):
-    data = [1] * max_input
-    result = [0] * max_input
+    data = [1] * (max_input+1)
+    result = [0] * (max_input+1)
     m = 2
     n = 0
     result[n] = m
@@ -10,7 +10,7 @@ def prime_num(max_input):
         print(m)
         if data[m] == 1:
             i = 2 * m
-            while i <= max_input:
+            while i < max_input:
                 data[i] = 0
                 i += m
             result[n] = m
@@ -18,7 +18,7 @@ def prime_num(max_input):
             m += 1
         else:
             m += 1
-        if m >= max_input:
+        if m > max_input:
             return result
 
 
