@@ -7,10 +7,10 @@ def prime_num(max_input):
     data[0] = 0
     data[1] = 0
     while 1:
-        print(m)
+        # print(m)
         if data[m] == 1:
             i = 2 * m
-            while i < max_input:
+            while i <= max_input:
                 data[i] = 0
                 i += m
             result[n] = m
@@ -22,4 +22,4 @@ def prime_num(max_input):
             return result[:n]
 
 
-print(prime_num(11))
+# print(prime_num(12))
