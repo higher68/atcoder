@@ -11,9 +11,11 @@ def factoring(n):
         num = 0
         while 1:
             if n % result[i] == 0:
-                n /= result[i]
+                print(n)
+                n //= result[i]
                 if num == 0:
                     pf[result[i]] = 1
+                    num += 1
                 else:
                     print(pf[result[i]])
                     pf[result[i]] += 1
