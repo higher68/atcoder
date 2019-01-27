@@ -1,5 +1,8 @@
 #include <iostream>
 using namespace std;
+static const int MAX = 1000000;
+
+int a[MAX] = {0};
 
 int func(int n)
 {
@@ -17,7 +20,23 @@ int func(int n)
 int main()
 {
     int s;
+    int a_tmp;
     cin >> s;
+    a_tmp = s;
+    a[a_tmp - 1] = 1;
+    for (int i = 1; i <= MAX; i++)
+    {
+        a_tmp = func(a_tmp);
+        if (a[a_tmp - 1] == 1)
+        {
+            cout << a_tmp;
+            break;
+        }
+        else
+        {
+            a[a_tmp - 1] = 1;
+        }
+    }
 
     return 0;
 }
