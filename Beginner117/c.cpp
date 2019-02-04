@@ -12,16 +12,17 @@ int main() {
     if (N >= M) {
         cout << 0;
     } else {
-        sort(X.begin(), X.end());
+        sort(X, X+M);
         int dist[M-1];
         for (int i=0; i< M-1;i++){
             dist[i] = X[i+1] - X[i];
+            // cout << i << dist[i] << endl;
         }
-        sort(dist.begin(), dist.end());
-        for (int i=N-1;i < length(dist); i++) {
+        sort(dist, dist+M-1, greater<>());
+        for (int i=N-1;i < sizeof(dist)/sizeof(*dist); i++) {
             ans += dist[i];
         }
-        cout << ans;
+        cout << ans << endl;
     }
     return 0;
 }
