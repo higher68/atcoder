@@ -27,6 +27,17 @@ int main()
         }
         dp[i] = mx;
     }
-    cout << dp[N];
+    string ans = "";
+    for (int i = N - 1; i > 1; i--)
+    {
+        for (int i = 0; i < M; i++)
+        {
+            if (dp[N] - func(A[i] == dp[N - 1]))
+            {
+                ans += string(A[i])
+            }
+        }
+    }
+    cout << ans << endl;
     return 0;
 }
