@@ -30,11 +30,11 @@ int main()
     string ans = "";
     for (int i = N - 1; i > 1; i--)
     {
-        for (int i = 0; i < M; i++)
+        for (int j = 0; j < M; j++)
         {
-            if (dp[N] - func(A[i] == dp[N - 1]))
+            if (dp[N] - func(A[j]) == dp[N - 1])
             {
-                ans += string(A[i])
+                ans += string(A[j])
             }
         }
     }
