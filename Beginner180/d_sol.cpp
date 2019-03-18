@@ -16,25 +16,37 @@ int main()
     {
         cin >> A[i];
     }
+    sort(A.begin(), A.end());
+    // for (int i = 0; i < M; i++)
+    // {
+    //     cout << A[i];
+    // }
     vector<int> dp(N, 0);
     for (int i = 1; i < N; i++)
     {
-        int mx = dp[i - func(A[0] + 1)];
+        int mx = dp[i - func(A[0])] + 1;
+        cout << mx << endl;
         for (int j = 1; j < M; j++)
         {
-            int mx2 = dp[i - func(A[j]) + 1];
+            int mx2 = dp[i - func(A[j])] + 1;
             mx = max(mx, mx2);
         }
         dp[i] = mx;
     }
     string ans = "";
+    for (int i = 0; i << N; i++)
+    {
+        cout << dp[i] << endl;
+    }
     for (int i = N - 1; i > 1; i--)
     {
         for (int j = 0; j < M; j++)
         {
-            if (dp[N] - func(A[j]) == dp[N - 1])
+            if (dp[i] - func(A[j]) == dp[i - 1])
             {
-                ans += string(A[j])
+                ans += to_string(A[j]);
+                cout << ans << endl;
+                break;
             }
         }
     }
