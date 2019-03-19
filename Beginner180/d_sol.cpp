@@ -21,35 +21,41 @@ int main()
     // {
     //     cout << A[i];
     // }
-    vector<int> dp(N, 0);
+    vector<int> dp(N, -10000000);
+    dp[0] = 0;
     for (int i = 1; i < N; i++)
     {
-        int mx = dp[i - func(A[0])] + 1;
-        cout << mx << endl;
-        for (int j = 1; j < M; j++)
-        {
-            int mx2 = dp[i - func(A[j])] + 1;
-            mx = max(mx, mx2);
-        }
-        dp[i] = mx;
-    }
-    string ans = "";
-    for (int i = 0; i << N; i++)
-    {
-        cout << dp[i] << endl;
-    }
-    for (int i = N - 1; i > 1; i--)
-    {
+        int mx = -100000000;
         for (int j = 0; j < M; j++)
         {
-            if (dp[i] - func(A[j]) == dp[i - 1])
+            if (i - func(A[j]) >= 0)
             {
-                ans += to_string(A[j]);
-                cout << ans << endl;
-                break;
+                int mx2 = dp[i - func(A[j])] + 1;
+                mx = max(mx, mx2);
+            }
+            //cout << "mx" << mx << endl;
+            dp[i] = mx;
+        }
+        //cout << "dp[i]" << dp[i] << endl;
+    }
+    string ans = "";
+    for (int i = 0; i < N; i++)
+        //{
+        //    cout << i << "dp[i]" << dp[i] << endl;
+        //}
+        for (int i = N - 1; i > 1; i--)
+        {
+            for (int j = M - 1; j > 0; j--)
+            {
+                if (dp[i - func(A[j])] == dp[i] - 1)
+                {
+                    //cout << A[j] << endl;
+                    ans += to_string(A[j]);
+                    //cout << ans << endl;
+                    break;
+                }
             }
         }
-    }
     cout << ans << endl;
     return 0;
 }
