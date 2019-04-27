@@ -2,29 +2,10 @@
 using namespace std;
 int main()
 {
-    int A, B, C;
-    cin >> A >> B >> C;
-    if (A > B)
-    {
-        if (B < C and C < A)
-        {
-            cout << "Yes" << endl;
-        }
-        else
-        {
-            cout << "No" << endl;
-        }
-    }
-    if (A < B)
-    {
-        if (A < C and C < B)
-        {
-            cout << "Yes" << endl;
-        }
-        else
-        {
-            cout << "No" << endl;
-        }
-    }
+    int A, B, T;
+    cin >> A >> B >> T;
+    int coun = (T + 0.5) / A;
+    int ans = B * coun;
+    cout << ans << endl;
     return 0;
 }
