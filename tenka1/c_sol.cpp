@@ -32,10 +32,16 @@ int main(void)
     whites.push_back(whites[N]);
     reverse(whites.begin(), whites.end());
     vector<int> costs;
-    for (int i = 1; i < N + 1; i++)
+    for (int i = 0; i < N + 2; i++)
     {
-        costs.push_back(blacks[i] + whites[i]);
+        costs.push_back(blacks[i] + whites[i + 1]);
     }
     int ans = *min_element(costs.begin(), costs.end());
+    //for (int i = 0; i < costs.size(); i++)
+    //{
+    //    cout << "blacks:" << blacks[i] << endl;
+    //    cout << "whites:" << whites[i] << endl;
+    //}
+    cout << ans << endl;
     return 0;
 }
